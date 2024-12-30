@@ -1,34 +1,580 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Page</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/fav-icon.png' %}">
 </head>
+
 <body>
-    <header>
-        <img src="{% static 'images/Rishi.jpeg' %}" alt="Header Image" style="height:200px; width:150px;">
-        <h1>Welcome to My Beautiful Page</h1>
-    </header>
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>We are committed to providing the best experience for our users.</p>
-        </section>
-        <section>
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="{% static 'images/Rishi.jpeg' %}" alt="Header Image" style="height:200px; width:150px;">
-                <img src="{% static 'images/Rishi.jpeg' %}" alt="Header Image" style="height:200px; width:150px;">
-                <img src="{% static 'images/Rishi.jpeg' %}" alt="Header Image" style="height:200px; width:150px;">
+    <div class="desktop-header">
+        <div class="container">
+            <div class="row  align-items-center">
+                <div class="col-2">
+                    <div class="header-logo">
+                      <a href="/"><img src="{% static '/images/logo-header.png' %}" alt=""/>
+                      </a>  
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="header-link">
+                        <ul>
+                        <a href="/"><li>Home</li></a>  
+                        <a href="/service"><li>Service</li></a> 
+                        <a href="/about-us"><li>About-us</li></a> 
+                            <a href="/contact-us"><li>Contact-us</li></a>
+                        </ul>
+                        <a href="/login"><button class="btn-standar">Are you a nurse ?</button></a>
+                        <button class="btn-book"><i class="fa-solid fa-phone-volume me-2"></i> Book Now</button>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <img src="{% static 'images/footer.jpg' %}" alt="Footer Image">
-        <p>© 2024 Beautiful Page. All rights reserved.</p>
+        </div>
+    </div>
+    <div class="mobile-header">
+        <div class="header-logo">
+          <a href=""><img src="{% static '/images/logo-header.png' %}" alt="Home Care Logo"></a>  
+        </div>
+        <div class="hamburger-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+    
+    <div class="slide-menu" id="slideMenu">
+        <div class="close-menu" id="closeMenu">
+            <i class="fa fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/service">Service</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="/login">Are you a nurse?</a></li>
+            <li><button class="btn-book"><i class="fa-solid fa-phone-volume me-2"></i> Book Now</button></li>
+        </ul>
+    </div>
+    
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const slideMenu = document.getElementById('slideMenu');
+        const closeMenu = document.getElementById('closeMenu');
+    
+        hamburgerMenu.addEventListener('click', () => {
+            slideMenu.classList.add('open');
+        });
+    
+        closeMenu.addEventListener('click', () => {
+            slideMenu.classList.remove('open');
+        });
+    </script>
+    <div class="banner">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="banner-img">
+                        <img src="{% static 'images/homecare-banner.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-heading">
+            <h1>Home Care Services in Jaipur</h1>
+            <p>Hello to the most professional <strong>Home care services in Jaipur</strong>. Our goal here is to be able
+                to attend the care needs of the clients in a way that is best, most specialized and professional. We
+                also provide qualified <strong>home health care-services in Jaipur</strong> – if you need a <strong>home
+                    nurse in Jaipur</strong>,
+                or <strong>caretaker in Jaipur</strong> you’ve come to the right place.
+            </p>
+            <button class="btn-book"><i class="fa-solid fa-phone-volume me-2"></i> Book Now</button>
+            <a href="https://wa.me/123456789" target="_blank">
+                <button class="Whatapp-btn"><i class="fa-brands fa-whatsapp me-2"></i> What's app</button>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="Features">
+            <div class="row">
+                <h2 class="mb-5">Benefits of Our Home Nursing Services in Jaipur</h2>
+                <div class="col-lg-12 col-xl-4">
+                    <div class="Benefits">
+                        <div class="Benefits-icon">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="Benefits-content">
+                            <h5>Skilled Care from Qualified Nurses</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-4">
+                    <div class="Benefits">
+                        <div class="Benefits-icon">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                        </div>
+                        <div class="Benefits-content">
+                            <h5>Avail the benefits of speedy recovery without stepping out of your home</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-4">
+                    <div class="Benefits">
+                        <div class="Benefits-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div class="Benefits-content">
+                            <h5>Faster, better, and more convenient when done at home.</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="contact-section">
+        <div class="contact-section-content">
+            <h4>Get in Touch</h4>
+            <p>Home Treat, an innovative company that focuses on <strong>home care services in Jaipur</strong>  and its
+                suburbs. We aim to provide warm and individualized care that encourages people to live with self-respect
+                and independence within their homes. Over the years, we have managed to grow into one of the foremost
+                companies in nursing care at home in Jaipur, as well as patient care services in the entire region of
+                Jaipur and beyond, thanks to our experience and highly qualified staff.</p>
+            <button class="btn-standar">Contant-us</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-4 align-items-center">
+            <div class="col-lg-12 col-xl-6">
+                <div class="border-container">
+                    <img src="{% static 'images/home-healthcare.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-12 col-xl-6">
+                <h2>Patient Care Services in Jaipur</h2>
+                <p>All of our <strong>patient care services in Jaipur</strong> are aimed at providing comfort, as well
+                    as care and
+                    treatment within the familiar surroundings of the patient’s home. We treat our patients especially
+                    those with post- surgical cases, the elderly, and those with chronic diseases, with both care and
+                    professionalism.</p>
+                <h2>Nursing Care at Home in Jaipur</h2>
+                <p>Searching for professional <strong>nursing care at home in Jaipur</strong> is easier than ever. As
+                    for the cares
+                    given by our skilled nursing team the services include administration of medication, dressing of
+                    wounds, managing intravenous therapies and vital signs examination.
+
+            </div>
+        </div>
+    </div>
+    <div class="service-plan">
+        <h4>Our Home Care Service Plan</h4>
+        <div class="container">
+            <table class=" rate-list table table-hover">
+                <tr>
+                    <td>
+                        <p>1 Hour Visit <i class="fa-solid fa-clock-rotate-left"></i></p>
+                        <p>500 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>2 Hour Visit <i class="fa-solid fa-clock-rotate-left"></i></p>
+                        <p>900 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>6 Hour Visit <i class="fa-solid fa-clock-rotate-left"></i></p>
+                        <p>1100 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>12 Hour Visit <i class="fa-solid fa-clock-rotate-left"></i></p>
+                        <p>1500 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>24 Hour Visit <i class="fa-solid fa-clock-rotate-left"></i></p>
+                        <p>2500 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h3 class="text-center my-4 py-4">Why Choose Our Patient Care Services? </h3>
+
+            <div class="row justify-content-center g-3 mb-5">
+                <div class="col-lg-12 col-xl-3">
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                        <h6 class="mt-3">24/7 availability.
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-3">
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-award"></i>
+                        <h6 class="mt-3">Regular health check-ups.</h6>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-3">
+                    <div class="achievement-item">
+                        <i class="fa-regular fa-calendar-plus"></i>
+                        <h6 class="mt-3">Physiotherapy sessions.</h6>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-3">
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-users-line"></i>
+                        <h6 class="mt-3">Mental health support.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-xl-6">
+                    <h3>Nursing Staff for Home Care in Jaipur</h3>
+                    <p>We have well experienced <strong>professional Nurses in home care services in Jaipur</strong> to
+                        take
+                        care medical
+                        as well as non medical requirements. Whether getting around, eating, dressing or just about
+                        anything, we guarantee the highest health outcomes for our clients.</p>
+                    <h3>Home Care Nursing Services in Jaipur</h3>
+                    <p>These <strong>Jaipur home care nursing services</strong> understand the comfort and health of the
+                        clients. With a focus on personalized care, we provide:
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check success"></i>Elderly care services.</li>
+                        <li><i class="fa-solid fa-circle-check success"></i>Patient care after surgery.</li>
+                        <li><i class="fa-solid fa-circle-check success"></i>Chronic disease management.</li>
+                    </ul>
+                    </p>
+                    <h3>Care taker in Jaipur</h3>
+                    <p>Seeking a reliable <strong>caretaker in Jaipur</strong>? Our staff is experienced to provide
+                        individual assistance with daily activities and the overall comfort of you and your family
+                        members.
+                    </p>
+                    <strong>Our Caretaker Services Include:</strong>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check success"></i>Help in washing and cleaning the body.</li>
+                        <li><i class="fa-solid fa-circle-check success"></i>Meal preparation and feeding.</li>
+                        <li><i class="fa-solid fa-circle-check success"></i>Company and satisfaction.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-12 col-xl-6">
+                    <h3>Health Care at Home Jaipur</h3>
+                    <p>Get the best <strong>Health care at home in Jaipur</strong> from our experienced staff. We offer
+                        medical and non medical assistance according to your requirements.
+
+                    </p>
+                    <h3>Home Health Care Services in Jaipur</h3>
+                    <p>The <strong>Home Health care services in Jaipur</strong> that we provide include Medication
+                        Management and supportive care services. For people who have a chronic illness and experience
+                        some complications or for those whom it is necessary to come to after surgery Rehabilitation is
+                        also available.
+
+                    </p>
+                    <h3>Home Care Assistance
+                    </h3>
+                    <p>With our <strong>home care assistance</strong>, you can rest assured that your loved ones are in
+                        safe hands. From basic daily activities to advanced medical care, we offer a full spectrum of
+                        services.
+
+                    </p>
+                    <h3>Home Care Agencies Near Me
+                    </h3>
+                    <p>Looking for <strong>home care agencies near me</strong>? Look no further! Our services are
+                        stretch across Jaipur city, making professional care come knocking at your door.
+
+                    </p>
+                </div>
+            </div>
+            <h3 class="text-center my-4 py-4">Why Choose Us?</h3>
+            <ul>
+                <li><i class="fa-solid fa-circle-check success"></i>Both highly skilled and friendly staff.</li>
+                <li><i class="fa-solid fa-circle-check success"></i> Customized care plans.</li>
+                <li><i class="fa-solid fa-circle-check success"></i> Affordable pricing.</li>
+                <li><i class="fa-solid fa-circle-check success"></i>Trusted by hundreds of families in Jaipur.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="service-plan">
+        <div class="container">
+            <div class="testimonials">
+                <div class="row">
+                    <div class="col-lg-12 col-lg-3">
+                        <div class="testi-heading">
+                            <h5>Testimonials</h5>
+                            <p>What people say about Our Service</p>
+                            <div class="swiper-navigation">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-lg-9">
+                        <div class="swiper testiSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testi-card">
+                                        <div class="testi-img">
+                                            <img src="{% static '/images/customer1.jpg' %}" alt="">
+                                            <p>Rajababu</p>
+                                        </div>
+                                        <div class="testi-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
+                                                molestiae incidunt est beatae sapiente voluptate, dolorum molestias
+                                                asperiores porro assumenda!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-card">
+                                        <div class="testi-img">
+                                            <img src="{% static '/images/customer2.jpg' %}" alt="">
+                                            <p>Santosh Armeniaa
+                                            </p>
+                                        </div>
+                                        <div class="testi-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
+                                                molestiae incidunt est beatae sapiente voluptate, dolorum molestias
+                                                asperiores porro assumenda!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-card">
+                                        <div class="testi-img">
+                                            <img src="{% static '/images/customer1.jpg' %}" alt="">
+                                            <p>Rajababu</p>
+                                        </div>
+                                        <div class="testi-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
+                                                molestiae incidunt est beatae sapiente voluptate, dolorum molestias
+                                                asperiores porro assumenda!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testi-card">
+                                        <div class="testi-img">
+                                            <img src="{% static '/images/customer2.jpg' %}" alt="">
+                                            <p>Rajababu</p>
+                                        </div>
+                                        <div class="testi-star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
+                                                molestiae incidunt est beatae sapiente voluptate, dolorum molestias
+                                                asperiores porro assumenda!</p>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="achievement">
+        <div class="container">
+            <div class="achievement-heading">
+                <h5>Our Achievements</h5>
+            </div>
+            <div class="achievement-items">
+                <div class="row justify-content-center g-3">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="achievement-item">
+                            <p><i class="fa-solid fa-users-line"></i>
+                                Customers</p>
+                            <h5>1000+</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="achievement-item">
+                            <p><i class="fa-solid fa-house-circle-check"></i>Visit</p>
+                            <h5>500+</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="achievement-item">
+                            <p><i class="fa-solid fa-award"></i>Awards</p>
+                            <h5>50+</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="achievement-item">
+                            <p><i class="fa-regular fa-calendar-plus"></i>Years</p>
+                            <h5>10+</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="faq-container">
+            <div class="row">
+                <div class="col-lg-12 col-xl-3">
+                    <div class="faq-heading">
+                        <p>What questions did people ask</p>
+                        <!-- <button class="btn-standar">View All</button> -->
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-9">
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <h2 class="faq-question">
+                                What are home nursing services in Jaipur?
+                                <span class="faq-item-icon">+</span>
+                            </h2>
+                            <p class="faq-answer">
+                                Home nursing services in Jaipur refer to professional health care provided to patients at
+                                their residence, ensuring comfort and personalized care. These services include
+                                <strong>nursing
+                                    care at home in Jaipur</strong>, where skilled nurses manage medical needs like wound
+                                care,
+                                medication administration, and post-surgery recovery. <strong>Home care services in
+                                    Jaipur</strong> also
+                                encompass a range of non-medical support, such as daily assistance with mobility, hygiene,
+                                and feeding, offered by trained <strong>caretakers in Jaipur</strong>. Whether it’s
+                                <strong>patient care
+                                    services in Jaipur</strong> , <strong>health care at home Jaipur</strong>, these
+                                services ensure a high level of care in the patient’s own environment. Home care nursing
+                                services in Jaipur provide
+                                peace of mind by delivering compassionate, professional support to enhance recovery and
+                                quality of life at home.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h2 class="faq-question">
+                                How do home care services in Jaipur benefit patients?
+                                <span class="faq-item-icon">+</span>
+                            </h2>
+                            <p class="faq-answer"><strong>Home care services in Jaipur</strong>,Home care services in Jaipur
+                                provide patients with personalized medical
+                                and non-medical assistance in the comfort of their homes, ensuring convenience and faster
+                                recovery. These services, which include <strong> nursing care at home in Jaipur,</strong>
+                                offer professional
+                                support for post-operative care, chronic illness management, and elderly care. With skilled
+                                nursing staff for <strong>home care in Jaipur</strong> and compassionate caretakers,
+                                patients benefit from
+                                individualized attention, reduced hospital visits, and improved emotional well-being. From
+                                comprehensive <strong>patient care services in Jaipur</strong> to specialized home nursing
+                                services in
+                                Jaipur, these solutions promote health and independence. Whether it’s health care at home in
+                                Jaipur or general care at home Jaipur, such services provide efficient and cost-effective
+                                <strong>home health care services in Jaipur</strong> tailored to the patient’s needs.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <h2 class="faq-question">
+                                What does home care nursing services in Jaipur include?
+                                <span class="faq-item-icon">+</span>
+                            </h2>
+                            <p class="faq-answer"> <strong>Home care nursing services in Jaipur</strong> include a wide range of medical
+                                and personal care tailored to patients’ specific needs. These services offer  <strong> nursing care
+                                    at home in Jaipur</strong>, where skilled nurses provide medical assistance such as wound care,
+                                administering injections, monitoring vital signs, and managing chronic conditions. <strong> Home
+                                    care services in Jaipur</strong> also extend to non-medical support, including help with daily
+                                activities like bathing, dressing, and mobility. With trained <strong>nursing staff for home care
+                                    in Jaipur</strong>, patients receive personalized attention in the comfort of their homes.
+                            </p>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
+    </div>
+    <footer class="desktop-footer">
+        <div class="footer-container">
+          <!-- Section 1: Logo and Site Name -->
+          <div class="footer-section footer-logo">
+           <a href="/"><img src="{% static '/images/logo-footer.png' %}" alt="Site Logo"></a> 
+       
+          </div>
+          
+          <!-- Section 2: Navigation Links -->
+          <div class="footer-section footer-links">
+            <strong>Useful Links</strong>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/service">Services</a></li>
+              <li><a href="/about-us">About</a></li>
+              <li><a href="/contact-us">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section footer-btn">
+            <p>Book Your Home care-services</p>
+            <button class="btn-book mb-3"><i class="fa-solid fa-phone-volume me-2"></i> Book Now</button>
+            <p>If You are a nurse in jaipur</p>
+            <a href="/login"><button class="btn-standar">Are you a nurse ?</button></a>
+    
+          </div>
+          <!-- Section 3: Contact and Social Links -->
+          <div class="footer-section footer-contact">
+            <p>Call: <a href="tel:+123456789">+123-456-789</a></p>
+            <div class="social-links">
+              <a href="https://wa.me/8440012556" target="_blank">
+                <img src="{% static '/images/whatsapp.webp' %}" alt="WhatsApp">
+              </a>
+              <a href="https://instagram.com/yourprofile" target="_blank">
+                <img src="{% static '/images/instagram.webp' %}" alt="Instagram">
+              </a>
+            </div>
+          </div>
+        </div>
     </footer>
+    <div class="mobile-footer">
+        <button class="btn-book"><i class="fa-solid fa-phone-volume me-2"></i> Book Now</button>
+            <a href="https://wa.me/8440012556" target="_blank">
+                <button class="Whatapp-btn"><i class="fa-brands fa-whatsapp me-2"></i> What's app</button>
+            </a>
+    </div>
 </body>
+
 </html>
