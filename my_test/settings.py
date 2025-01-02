@@ -14,9 +14,15 @@ import os
 from pathlib import Path
 import environ
 env = environ.Env()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)
+
+if READ_DOT_ENV_FILE:
+    # OS environment variables take precedence over variables from .env
+    env.read_env(str(BASE_DIR / ".env"))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -162,8 +168,6 @@ AWS_LOCATION='static'
 AWS_DEFAULT_ACL=None
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-
-
 
 
 
