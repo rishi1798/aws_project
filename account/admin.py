@@ -8,3 +8,4 @@ admin.site.register(User)
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ('title', 'uploaded_at')
+#just adding a comment to test git command
