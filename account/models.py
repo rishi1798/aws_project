@@ -23,7 +23,7 @@ class User(AbstractUser):
     email = EmailField(_("email address"), unique=True)
     username = None  # type: ignore[assignment]
 
-    USERNAME_FIELD = "username"
+    USERNAME_FIELD = "username2"
     REQUIRED_FIELDS = []
 
     objects = UserManager()
